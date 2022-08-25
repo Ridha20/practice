@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clearInterval(timeout)">Stop Alert</button>
+    <br><br>
+    <p id="time">Alert Count</p>
+    <script>
+       //Date
+        var date1 = new Date();
+        document.write("Milliseconds since 1970/01/01 :   "+date1.getTime()+"<br><br>");
+        document.write("Get curent hour :   "+date1.getHours()+"<br><br>");
+        document.write("Get Minutes :   "+date1.getMinutes()+"<br><br>");
+        document.write("Get Seconds :   "+date1.getSeconds()+"<br><br>");
+
+        document.write("Get Time :   "+date1.getHours()+" : "+date1.getMinutes()+" : "+date1.getSeconds()+" : "+date1.getMilliseconds()+"<br><br>");
+         //Time
+
+         var date1 = new Date();
+        document.write(date1+"<br><br>");
+
+        var date2 = new Date(1996,08,11);
+        document.write(date2+"<br><br>");
+
+        var date3 = new Date(1996,08);
+        document.write(date3+"<br><br>");
+
+        var date4 = new Date(1996);
+        document.write(date4+"<br><br>");
+
+        var year = date1.getUTCFullYear();
+        var month = date1.getUTCMonth()+1;
+        var date = date1.getUTCDate();
+        var day = date1.getUTCDay();
+
+        document.write("date/month/year :   "+date+"/"+month+"/"+year+"<br>");
+        document.write("day/month/year :   "+day+"/"+month+"/"+year);
+        date1.setFullYear(2021,11,11);
+        document.write("<br><br> New Date :   "+date1);
+
+         //use setTimeout method
+
+        var timeout = setTimeout(display,2000);
+        var count = 0;
+        
+        function display(){
+        count++;
+        alert("setTimeout is getting executed");
+        document.getElementById("time").innerHTML = "Alert Count :  "+count;
+        timeout = setTimeout(display,2000);
+    }
+    </script>
+</body>
+</html>

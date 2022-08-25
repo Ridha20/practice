@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Uisng getElement by id,class and tagname </p>
+    <p id="1">This is through id</p>
+    <p class="thisclass">This is through class 1</p>
+    <p class="thisclass">This is through class 2</p>
+
+
+    <script>
+    //accessing element by id
+    var id1 = document.getElementById("1").innerHTML;
+      document.write("getElementById :   "+id1+"<br>");
+
+
+    //accessing element by class
+    var class1 = document.getElementsByClassName("thisclass")[0].innerHTML;
+      document.write("getElementsByClassName :   "+class1+"<br>");
+    var class2 = document.getElementsByClassName("thisclass")[1].innerHTML;
+      document.write("getElementsByClassName :   "+class2+"<br>");
+
+    //accessing element by tagname
+    var tagName1 = document.getElementsByTagName("p")[0].innerHTML
+      document.write("getElementsByTagName :   "+tagName1+"<br>");
+      console.log(tagName1);
+    var tagName2 = document.getElementsByTagName("p")[1].innerHTML
+      document.write("getElementsByTagName :   "+tagName2+"<br>");
+      console.log(tagName2);
+    var tagName2 = document.getElementsByTagName("p")[2].innerHTML
+      document.write("getElementsByTagName :   "+tagName2+"<br>");
+      console.log(tagName2);
+  
+ 
+    //accessing first element using querySelector 
+    var firstElementParagraph = document.querySelector("p").innerText;
+      document.write("First element through querySelector :   "+firstElementParagraph+"<br>");
+      console.log(firstElementParagraph);
+ 
+    
+    var AllElementParagraph= document.querySelectorAll("p");
+	  for (var i = 0; i < AllElementParagraph.length; i++) {
+       document.write("all element through querySelector :   "+ AllElementParagraph[i]+"<br>")
+	  console.log('all para elements ', AllElementParagraph[i]);
+	}
+
+    </script>
+
+
+
+
+<p>Uisng parent,child,sibling </p>
+<p id="first">Hello this first line </p>
+<p class="second">this is second line</p>
+<p class="third">this is third line</p>
+
+<ul><li>Morning</li>
+    <li>Afternoon</li>
+    <li>Evening</li>
+    <li>Night</li></ul>
+
+<script >
+//access children of a body
+var child = document.body.children;
+console.log(child);
+
+//add new child in a body
+var paragraph = document.createElement("p");   
+var textNode = document.createTextNode("New node is created");
+paragraph.appendChild(textNode);
+console.log(paragraph);
+
+document.body.appendChild(paragraph);
+
+//access first child and last child
+var list = document.querySelector("ul");
+console.log(list);
+
+//first child
+console.log(list.firstChild);
+document.write(list.firstChild.innerHTML+"<br>");
+//last  child
+console.log(list.lastChild);
+document.write(list.lastChild.innerHTML);
+
+//siblings
+var firstsiblings = hello.nextElementSibling;
+console.log(firstsiblings);
+
+//parent
+console.log(paragraph.parentNode);
+    </script>
+
+  </body>
+</html>
